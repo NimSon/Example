@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+	ios::sync_with_stdio(false);	// iostream과 stdio의 동기화를 끊어준다.
+	cin.tie(NULL);					// cin and cout untie
+
+	int T;
+	cin >> T;
+
+	for (T; T > 0; --T) {
+		int A, B;
+		cin >> A >> B;
+
+		cout << A + B << '\n';
+	}
+
+	return 0;
+}
