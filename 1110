@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int cycle(int num) {
+	int tmp;
+	return tmp = ((num % 10) * 10) + (((num / 10) + (num % 10)) % 10);
+}
+
+int main() {
+
+	int N, tmp;
+	cin >> N;
+	tmp = cycle(N);
+
+	int count = 1;
+	while (N != tmp) {
+		tmp = cycle(tmp);
+
+		++count;
+	}
+	cout << count;
+
+	return 0;
+}
