@@ -15,7 +15,7 @@ int main() {
 		cin >> beverage[i];
 	}
 
-	cout << min(min(burger[0], burger[1]), burger[2]) + min(beverage[0], beverage[1]) - 50;
+	cout << min({burger[0], burger[1], burger[2]}) + min(beverage[0], beverage[1]) - 50;
 
 	return 0;
 }
