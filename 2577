@@ -10,17 +10,12 @@ int main() {
 
 	std::string mul = std::to_string(A * B * C);
 	for (int i = 0; i < mul.length(); ++i) {
-		for (int j = 0; j < 10; ++j) {
-			if (mul[i] == (char)j + 48) {
-				++num[j];
-			}
-		}
+		++num[mul[i] - 48];
 	}
 
 	for (int i = 0; i < 10; ++i) {
 		std::cout << num[i] << '\n';
 	}
-
 
 	return 0;
 }
