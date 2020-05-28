@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>	// std::string, std::to_string, string.length()
+
+int main() {
+
+	int A, B, C;
+	std::cin >> A >> B >> C;
+
+	int num[10] = { 0, };
+
+	std::string mul = std::to_string(A * B * C);
+	for (int i = 0; i < mul.length(); ++i) {
+		for (int j = 0; j < 10; ++j) {
+			if (mul[i] == (char)j + 48) {
+				++num[j];
+			}
+		}
+	}
+
+	for (int i = 0; i < 10; ++i) {
+		std::cout << num[i] << '\n';
+	}
+
+
+	return 0;
+}
