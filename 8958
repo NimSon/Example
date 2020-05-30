@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>	// stringlength()
+
+int main(void) {
+
+	int testCase;
+	std::cin >> testCase;
+
+	for (int i = 0; i < testCase; ++i) {
+		std::string quiz;
+		std::cin >> quiz;
+		int sum = 0;
+		int score = 0;
+		for (int j = 0; j < quiz.length(); ++j) {
+			if (quiz[j] == 'O') {
+				sum += ++score;
+			}
+			else {
+				score = 0;
+			}
+		}
+		std::cout << sum << '\n';
+	}
+
+	return 0;
+}
