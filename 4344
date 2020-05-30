@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>	// std::fixed, std::setprecision()
+
+int main(void) {
+
+	int C;
+	std::cin >> C;
+
+	for (int j = 0; j < C; ++j) {
+		int N;
+		std::cin >> N;
+
+		int* score = new int[N];
+		int sum = 0;
+		for (int i = 0; i < N; ++i) {
+			std::cin >> score[i];
+			sum += score[i];
+		}
+		
+		double average = (double)sum / N;
+		int count = 0;
+		for (int i = 0; i < N; ++i) {
+			if (score[i] > average) {
+				++count;
+			}
+		}
+
+		std::cout << std::fixed << std::setprecision(3) << ((double)count / N) * 100 << "%\n";
+
+		delete[] score;
+	}
+	
+	return 0;
+}
