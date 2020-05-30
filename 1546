@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>	// std::max()
+
+int main(void) {
+
+	int N;
+	std::cin >> N;
+
+	double *score = new double[N];
+	double max_score = -1.;
+	for (int i = 0; i < N; ++i) {
+		std::cin >> score[i];
+		max_score = std::max(score[i], max_score);
+	}
+
+	double sum = 0.;
+	for (int i = 0; i < N; ++i) {
+		sum += score[i] / max_score * 100.;
+	}
+
+	std::cout << sum / N;
+
+	return 0;
+}
