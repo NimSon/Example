@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>		// std::stirng, string.lenght()
+#include <utility>		// std::pair
+#include <algorithm>	// std::sort
+
+int main(void) {
+
+	std::string word;
+	std::cin >> word;
+
+	std::pair<int, char> alphabet[26];
+
+	for (int i = 0; i < word.length(); ++i) {
+		if (word[i] >= 'A' && word[i] <= 'Z') {
+			++alphabet[word[i] - 'A'].first;
+		}
+		else if (word[i] >= 'a' && word[i] <= 'z') {
+			++alphabet[word[i] - 'a'].first;
+		}
+	}
+
+	for (int i = 0; i < 26; ++i) {
+		alphabet[i].second = i + 'A';
+	}
+
+	std::sort(alphabet, alphabet + 26);
+
+	if (alphabet[25].first == alphabet[24].first) {
+		std::cout << "?";
+	}
+	else {
+		std::cout << alphabet[25].second;
+	}
+
+	return 0;
+}
