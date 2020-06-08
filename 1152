@@ -1,0 +1,19 @@
+#include <iostream>	// getline()
+#include <string>
+#include <sstream>	// std::stringstream
+
+int main(void) {
+
+	std::string str;
+	getline(std::cin, str);
+
+	std::stringstream split_str(str);
+	int count = 0;
+	while (split_str >> str) {
+		++count;
+	}
+
+	std::cout << count;
+
+	return 0;
+}
