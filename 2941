@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main(void) {
+
+	std::vector<std::string> eng = { "c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=" };
+	std::string word;
+	std::cin >> word;
+	
+	for (int i = 0; i < eng.size(); ++i) {
+		while (word.find(eng[i]) != std::string::npos) {
+			word.replace(word.find(eng[i]), eng[i].length(), "&");
+		}
+	}
+
+	std::cout << word.length();
+
+	return 0;
+}
