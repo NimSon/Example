@@ -1,0 +1,24 @@
+#include <iostream>
+#include <iomanip>   // setfill(), setw()
+
+int main(void) {
+    int T, W, H, N;
+    int quotient, remainder;
+
+    std::cin >> T;
+
+    for (int i = 0; i < T; ++i) {
+        std::cin >> H >> W >> N;
+
+        quotient = N / H;
+        remainder = N % H;
+
+        if (remainder == 0) {
+            std::cout << H << std::setw(2) << std::setfill('0') << quotient << '\n';
+        }
+        else {
+            std::cout << remainder << std::setw(2) << std::setfill('0') << quotient + 1 << '\n';
+        }
+    }
+    return 0;
+}
