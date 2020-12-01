@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main() {
+
+	int N;
+	std::cin >> N;
+
+	int KG5 = N / 5;
+	int KG3 = (N % 5) / 3;
+
+	while (1) {
+		int totalSugar = (5 * KG5) + (3 * KG3);
+		
+		if (totalSugar == N) {
+			std::cout << KG5 + KG3;
+			return 0;
+		}
+		else if(totalSugar > N){
+			std::cout << -1;
+			return 0;
+		}
+		else {
+			--KG5;
+			if (KG5 < 0) {
+				KG5 = 0;
+			}
+			KG3 += 2;
+		}
+	}
+
+	return 0;
+}
