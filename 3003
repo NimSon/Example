@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main() {
+
+	using namespace std;
+
+	int chess[] = { 1, 1, 2, 2, 2, 8 };   // 체스의 총 피스(16개)
+	int F_white[6];   // 동혁이가 찾은 피스 수
+	int N_white[6];   // 게임을 진행하기 위해 필요한 피스 수
+
+	for (int i = 0; i < 6; ++i) {
+		cin >> F_white[i];
+		N_white[i] = chess[i] - F_white[i];
+		cout << N_white[i] << ' ';
+	}
+
+	return 0;
+}
