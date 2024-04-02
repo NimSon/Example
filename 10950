@@ -1,0 +1,16 @@
+#include<iostream>
+
+int main() {
+	using namespace std;
+
+	int T, A, B;
+	cin >> T;
+	
+	for (int i = 0; i < T; ++i) {
+		cin >> A >> B;
+
+		cout << A + B << '\n';   // 예시 출력이 '개행' 이기 때문에 '\n' 필수
+	}
+
+	return 0;
+}
